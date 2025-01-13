@@ -41,7 +41,7 @@ namespace Reflection{
         // methods
         {{#class_method_defines}}
         static const char* getMethodName_{{class_method_name}}(){ return "{{class_method_name}}";}
-        static void invoke_{{class_method_name}}(void * instance){static_cast<{{class_name}}*>(instance)->{{class_method_name}}();}
+        static void invoke_{{class_method_name}}(void* instance){static_cast<{{class_name}}*>(instance)->{{class_method_name}}();}
         {{/class_method_defines}}
     };
 }//namespace TypeFieldReflectionOparator
@@ -83,7 +83,7 @@ namespace Reflection{
         {{#class_method_defines}}
         MethodFunctionTuple* method_function_tuple_{{class_method_name}}=new MethodFunctionTuple(
             &TypeFieldReflectionOparator::Type{{class_name}}Operator::getMethodName_{{class_method_name}},
-            &TypeFieldReflectionOparator::Type{{class_name}}Operator::invoke_{{class_method_name}});
+            &TypeFieldReflectionOparator::Type{{class_name}}Operator::Invoke_{{class_method_name}});
         REGISTER_Method_TO_MAP("{{class_name}}", method_function_tuple_{{class_method_name}});
         {{/class_method_defines}}
         

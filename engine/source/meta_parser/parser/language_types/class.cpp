@@ -29,6 +29,7 @@ Class::Class(const Cursor& cursor, const Namespace& current_namespace) :
             // method
             case CXCursor_CXXMethod:
                 m_methods.emplace_back(new Method(child, current_namespace, this));
+                break;
             default:
                 break;
         }
