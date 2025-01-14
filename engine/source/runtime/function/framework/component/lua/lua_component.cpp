@@ -123,7 +123,7 @@ namespace Piccolo
         Reflection::MethodAccessor* methods;
         size_t method_count = meta.getMethodsList(methods);
         auto method_iter = std::find_if(methods, methods + method_count, [method_name](auto m){return m.getMethodName() == method_name;});
-        if(method_iter == methods + method_count) {
+        if(method_iter != methods + method_count) {
             method_iter->Invoke(target_instance);
         }
         else {
