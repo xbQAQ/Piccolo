@@ -38,7 +38,7 @@ namespace Generator
 
         Mustache::data class_methods_defines = Mustache::data::type::list;
         genClassMethodRenderData(class_temp, class_methods_defines);
-        class_def.set("class_methods_defines", class_methods_defines);
+        class_def.set("class_method_defines", class_methods_defines);
     }
     void GeneratorInterface::genClassFieldRenderData(std::shared_ptr<Class> class_temp, Mustache::data& feild_defs)
     {

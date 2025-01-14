@@ -306,7 +306,7 @@ namespace Piccolo
             m_method_name      = dest.m_method_name;
             return *this;
         }
-        void MethodAccessor::invoke(void* instance) { (std::get<1>(*m_functions))(instance); }
+        void MethodAccessor::Invoke(void* instance) { (std::get<1>(*m_functions))(instance); }
         ArrayAccessor::ArrayAccessor() :
             m_func(nullptr), m_array_type_name("UnKnownType"), m_element_type_name("UnKnownType")
         {}

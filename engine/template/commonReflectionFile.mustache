@@ -41,7 +41,7 @@ namespace Reflection{
         // methods
         {{#class_method_defines}}
         static const char* getMethodName_{{class_method_name}}(){ return "{{class_method_name}}";}
-        static void invoke_{{class_method_name}}(void* instance){static_cast<{{class_name}}*>(instance)->{{class_method_name}}();}
+        static void Invoke_{{class_method_name}}(void* instance){static_cast<{{class_name}}*>(instance)->{{class_method_name}}();}
         {{/class_method_defines}}
     };
 }//namespace TypeFieldReflectionOparator
