@@ -29,6 +29,7 @@ namespace Piccolo
         _main_camera_pass_attachment_count              = 9,
     };
 
+    // 记录了Main Camera Pass所有的subpass
     enum
     {
         _main_camera_subpass_basepass = 0,
@@ -83,9 +84,12 @@ namespace Piccolo
             RHIPipeline*       pipeline;
         };
 
+        // 记录了Pass可能会用到的全局资源
         GlobalRenderResource*      m_global_render_resource {nullptr};
 
+        // 记录了输入输出资源在Shader中的布局信息
         std::vector<Descriptor>         m_descriptor_infos;
+        // 记录了渲染管线的信息
         std::vector<RenderPipelineBase> m_render_pipelines;
         Framebuffer                     m_framebuffer;
 
@@ -98,6 +102,7 @@ namespace Piccolo
         virtual std::vector<RHIImageView*>           getFramebufferImageViews() const;
         virtual std::vector<RHIDescriptorSetLayout*> getDescriptorSetLayouts() const;
 
+        // 记录了这个pass可见的物体
         static VisiableNodes m_visiable_nodes;
 
     private:

@@ -14,8 +14,10 @@ namespace Piccolo
     {
         RenderPass::initialize(nullptr);
 
+        // 拿到贴图
         const ColorGradingPassInitInfo* _init_info = static_cast<const ColorGradingPassInitInfo*>(init_info);
         m_framebuffer.render_pass                  = _init_info->render_pass;
+
 
         setupDescriptorSetLayout();
         setupPipelines();
@@ -23,6 +25,7 @@ namespace Piccolo
         updateAfterFramebufferRecreate(_init_info->input_attachment);
     }
 
+    // 设置Color Grading Pass的描述符集布局
     void ColorGradingPass::setupDescriptorSetLayout()
     {
         m_descriptor_infos.resize(1);
@@ -189,6 +192,7 @@ namespace Piccolo
         m_rhi->destroyShaderModule(frag_shader_module);
     }
 
+    // 设置描述符集
     void ColorGradingPass::setupDescriptorSet()
     {
         RHIDescriptorSetAllocateInfo post_process_global_descriptor_set_alloc_info;
